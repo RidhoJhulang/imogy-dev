@@ -86,9 +86,9 @@
 		<h1>
 			Shifting Schedule
 		</h1>
-		<a href="#" class="pull-right btn-box-tool text-green pull-left" data-toggle="modal" data-target="#modal-addusershifting"><i class="fa fa-plus"></i> Add User Shifting</a>			
+		<a href="#" class="pull-right btn-box-tool text-red pull-left" data-toggle="modal" data-target="#modal-addusershifting"><i class="fa fa-plus"></i> Modify User Shifting</a>					
 		<ol class="breadcrumb">
-			<li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a href="{{url('admin')}}"><i class="fa fa-dashb oard"></i> Home</a></li>
 			<li class="active">Shifting Schedule</li>
 		</ol>
 		<br>
@@ -168,30 +168,24 @@
 						<!-- THE CALENDAR -->
 						<div id="calendar"></div>
 					</div>
-					
-					<!-- /.box-body -->
 				</div>
 			</section>			
-		</div>
-		
-	</section>
-
-	<div class="modal fade in" id="modal-addusershifting"  tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-					<h4 class="modal-title">Add User Shifting</h4>
-				</div>
-				<form method="POST" action="{{url('addUserShifting')}}" enctype="multipart/form-data">
+		</div>	
+	</section>	
+</div>
+<div class="modal fade" id="modal-addusershifting" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Modify User Shifting</h4>
+			</div>
+			<form method="POST" action="{{url('addUserShifting')}}" enctype="multipart/form-data">
 					{!! csrf_field() !!}
 						<div class="modal-body">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label>Nama Users</label>
+										<label>Users Name</label>
 										<select class="form-control" name="id_user">
 											@foreach($nameUsers as $nameUser)
 												<option value="{{$nameUser->id}}">{{$nameUser->name}}</option>
@@ -208,17 +202,16 @@
 											@endforeach
 											</select>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Add user</button>
+							<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>						
+							<button type="submit" class="btn btn-primary">Modify user</button>
 						</div>
-				</form>
-			</div>
+			</form>
 		</div>
 	</div>
-
 </div>
 @endsection
 @section('script')

@@ -1266,7 +1266,7 @@
 				$("#countProgress").text(result[0][1]);
 				$("#countPending").text(result[0][2]);
 				$("#countClose").text(result[0][3]);
-				$("#countCancel").text(result[0][4]);
+				$("#countCancel").text(result[0][4]); 
 				$("#countAll").text(result[0][5]);
 
 				$("#countCritical").text(result[4][0]['count']);
