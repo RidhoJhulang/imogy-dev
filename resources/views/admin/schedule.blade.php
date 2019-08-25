@@ -1,4 +1,5 @@
-@extends((Auth::user()->role == "1") ? 'layouts.admin.layout ' : 'layouts.engineer.elayout')
+@extends('layouts.admin.layout')
+
 @section('content')
 <style>
 	.loader {
@@ -142,14 +143,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- @if(session('message'))
-				<div class="alert alert-success alert-dismissible" style="margin-top: 330px;margin-right: 0px; position:fixed; top:0; left:260px; width:200px;">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<h4><i class="icon fa fa-check"></i> Success!</h4>
-						{{session('message')}}
-				</div>
-				@endif -->
-
 				<div class="box box-danger box-solid" id="deletePlace" style="display: none;">
 					<div class="box-header">
 						<div class="box-title">
@@ -168,7 +161,7 @@
 						<!-- THE CALENDAR -->
 						<div id="calendar"></div>
 					</div>
-				</div>
+				</div>	
 			</section>			
 		</div>	
 	</section>	
