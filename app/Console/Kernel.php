@@ -30,9 +30,9 @@ class Kernel extends ConsoleKernel
 			Artisan::call('SendAllProjectRemainder:send_all');
 		})->dailyAt('08:00')->timezone('Asia/Jakarta');
 
-		$schedule->call(function () {
-			Artisan::call('UsersCondition:condition');
-		})->daily()->timezone('Asia/Jakarta');
+		// $schedule->call(function () {
+		// 	Artisan::call('UsersCondition:condition');
+		// })->daily()->timezone('Asia/Jakarta');
 		// $schedule->call(function() {
 		// 	$text = "Test Text";
 
