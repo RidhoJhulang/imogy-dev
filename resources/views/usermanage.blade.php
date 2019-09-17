@@ -20,7 +20,9 @@
 					<ul class="nav nav-tabs">
 						@foreach($privileges as $privilege)
 						<li>
-							<a href="#{{$privilege->id}}" data-toggle="tab" aria-expanded="true">{{$privilege->privilege_name}}</a>
+							<a href="#{{$privilege->id}}" data-toggle="tab" aria-expanded="true">
+								{{$privilege->privilege_name}}
+							</a>
 						</li>
 						@endforeach
 					</ul>
@@ -43,9 +45,11 @@
 												<a href="#" class="pull-right btn-box-tool text-green" data-toggle="modal" data-target="#modal-default" onclick="getMasuk('{{$user->id}}')" >
 													<i class="fa fa-edit"></i> Edit Schedule
 												</a>
+												@if(Auth::user()->jabatan == 1 || Auth::user()->jabatan == 5) 
 												<a href="#" class="pull-right btn-box-tool text-yellow" data-toggle="modal" data-target="#modal-profile" onclick="getProfile('{{$user->id}}')" >
 													<i class="fa fa-edit"></i> Edit Profile
 												</a>
+												@endif
 											</span>
 											@if($user->condition == "on")
 												@foreach($waktu_absen as $absen)
